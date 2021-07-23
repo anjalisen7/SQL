@@ -1,13 +1,13 @@
 <?php
  require_once("connection.php");
  require_once("header.php");
-   $selectQuery= "Select * from sqlPractice order by id desc";
+   $selectQuery= "Select * from sqlPractice order by city desc ,id desc";
      $result=mysqli_query($conn,$selectQuery);
       if(mysqli_num_rows($result)>0){
             ?>
             <body background="grey">
             <div class="container">
-                        <table class="table-stripped table-bordered">
+                        <table class="table-stripped table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>S.NO.</th>
