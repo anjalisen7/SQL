@@ -1,7 +1,7 @@
 <?php
  require_once("connection.php");
  require_once("header.php");
-   $selectQuery= "Select * from sqlPractice";
+   $selectQuery= "Select DISTINCT city  from sqlPractice";
      $result=mysqli_query($conn,$selectQuery);
       if(mysqli_num_rows($result)>0){
             ?>
@@ -11,9 +11,9 @@
                             <thead>
                                 <tr>
                                     <th>S.NO.</th>
-                                    <th>Name</th>
+                                    <!-- <th>Name</th>
                                     <th>Age</th>
-                                    <th>EMAIL</th>
+                                    <th>EMAIL</th> -->
                                     <th>City</th>
                                 </tr>
                             </thead>
@@ -22,9 +22,6 @@
                             <tbody>
                                 <tr>
                                     <td>*</td>
-                                    <td><?php print_r($row['name']);?></td>
-                                    <td><?php print_r($row['age']);?></</td>
-                                    <td><?php print_r($row['email']);?></</td>
                                     <td><?php print_r($row['city']);?></</td>
                                 </tr>
                             </tbody>
