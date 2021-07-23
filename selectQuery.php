@@ -1,7 +1,7 @@
 <?php
  require_once("connection.php");
  require_once("header.php");
-   $selectQuery= "Select * from sqlPractice where not city='jabalpur'";
+   $selectQuery= "Select * from sqlPractice where  city='jabalpur' and (age='34'and age='38')";
      $result=mysqli_query($conn,$selectQuery);
       if(mysqli_num_rows($result)>0){
             ?>
@@ -35,7 +35,7 @@
         </body>  
         <?php  
       }else{
-          echo"error";
+          echo"NO Result";
       }
 
 ?>
