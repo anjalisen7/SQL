@@ -11,9 +11,6 @@
                             <thead>
                                 <tr>
                                     <th>S.NO.</th>
-                                    <!-- <th>Name</th>
-                                    <th>Age</th>
-                                    <th>EMAIL</th> -->
                                     <th>City</th>
                                 </tr>
                             </thead>
