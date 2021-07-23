@@ -1,7 +1,7 @@
 <?php
  require_once("connection.php");
  require_once("header.php");
-   $selectQuery= "Select *  from sqlPractice where ID = 1";
+   $selectQuery= "Select * from sqlPractice where city = 'gwalior' or age='30'";
      $result=mysqli_query($conn,$selectQuery);
       if(mysqli_num_rows($result)>0){
             ?>
