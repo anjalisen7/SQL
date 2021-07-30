@@ -20,7 +20,7 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT * FROM sqlpractice WHERE   city  in ('gwalior','agra')";
+                      $selectQuery= "SELECT * FROM sqlpractice WHERE   city not IN ('gwalior','agra')";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
