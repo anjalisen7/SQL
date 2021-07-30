@@ -11,8 +11,8 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Age</th>
-                            <th>Email</th>
                             <th>City</th>
+                            <th>Email</th>
                             <th>salary</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -20,7 +20,7 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT * FROM sqlpractice WHERE  BINARY name  Like 'a%'";
+                      $selectQuery= "SELECT * FROM sqlpractice WHERE   city  in ('gwalior','agra')";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
