@@ -20,17 +20,13 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT MIN(salary) as salary,name,city,age FROM sqlpractice";
+                      $selectQuery= "SELECT SUM(salary) as salary FROM sqlpractice";
                      $query = mysqli_query($conn,$selectQuery);
-                      while($result=mysqli_fetch_array($query)){
-                   
+                      while($result=mysqli_fetch_assoc($query)){
+                               
                      ?>
                         <tr>
-                           
-                            <td><?php echo $result['name']?></td>
-                            <td><?php echo $result['age']?></td>                     
-                            <td><?php echo $result['city']?></td>
-                            <td><?php echo  $result['salary'];?></td>
+                            <td><?php echo "total sum of salary=>" .$result['salary'];?></td>
                             <td><button class="btn btn-secondary ">Edit</button></td>
                             <td>Delete</td>
                        </tr> 
