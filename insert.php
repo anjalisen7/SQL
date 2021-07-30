@@ -15,3 +15,4 @@ require_once("header.php");
      require_once("formInsert.php");
      ?>
  </body>
+ </html>
