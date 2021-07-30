@@ -20,7 +20,7 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT * FROM sqlpractice WHERE name Like 'a%' or  name Like 'j%'";
+                      $selectQuery= "SELECT * FROM sqlpractice WHERE name  not Like 'a%' or  name Like 'j%'";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
