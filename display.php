@@ -20,13 +20,13 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT SUM(salary) as salary FROM sqlpractice";
+                      $selectQuery= "SELECT avg(salary) as salary FROM sqlpractice";
                      $query = mysqli_query($conn,$selectQuery);
                       while($result=mysqli_fetch_assoc($query)){
                                
                      ?>
                         <tr>
-                            <td><?php echo "total sum of salary=>" .$result['salary'];?></td>
+                            <td><?php echo "average of salary=>" .$result['salary'];?></td>
                             <td><button class="btn btn-secondary ">Edit</button></td>
                             <td>Delete</td>
                        </tr> 
