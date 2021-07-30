@@ -20,18 +20,18 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT * FROM sqlpractice WHERE  age  not between 26 And 36 AND  city NOT IN ('gwalior')";
+                      $selectQuery= "SELECT ID as customer_id, name as customer_name, age as customer_Age, city as customer_city FROM sqlpractice";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
                      ?>
                         <tr>
-                        <td><?php echo $result['ID']?></td>
-                        <td><?php echo $result['name']?></td>
-                        <td><?php echo $result['age']?></td>                     
-                        <td><?php echo $result['city']?></td>
-                        <td><?php echo $result['email']?></td>
-                        <td><?php echo $result['salary'];?></td>
+                        <td><?php echo $result['customer_id']?></td>
+                        <td><?php echo $result['customer_name']?></td>
+                        <td><?php echo $result['customer_Age']?></td>                     
+                        <td><?php echo $result['customer_city']?></td>
+                        <!-- <td><?php echo $result['email']?></td>
+                        <td><?php echo $result['salary'];?></td> -->
                             <td><button class="btn btn-secondary ">Edit</button></td>
                             <td>Delete</td>
                        </tr> 
