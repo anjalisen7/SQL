@@ -20,7 +20,7 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT * FROM sqlpractice WHERE  age  not between 26 And 36 AND  city IN ('gwalior')";
+                      $selectQuery= "SELECT * FROM sqlpractice WHERE  age  not between 26 And 36 AND  city NOT IN ('gwalior')";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
