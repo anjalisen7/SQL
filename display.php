@@ -8,10 +8,10 @@
   
                     <table class="table  text-center table-stripped table-hover table-bordered">
                         <tr class="table table-success table-stripped">
-                            <!-- <th>ID</th> -->
+                            <th>ID</th>
                             <th>Name</th>
                             <th>Age</th>
-                            <!-- <th>Email</th> -->
+                            <th>Email</th>
                             <th>City</th>
                             <th>salary</th>
                             <th>Edit</th>
@@ -20,13 +20,18 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT avg(salary) as salary FROM sqlpractice";
-                     $query = mysqli_query($conn,$selectQuery);
-                      while($result=mysqli_fetch_assoc($query)){
+                      $selectQuery= "SELECT * FROM sqlpractice WHERE name Like 'a%'";
+                      $query = mysqli_query($conn,$selectQuery);
+                      while($result= mysqli_fetch_array($query)){
                                
                      ?>
                         <tr>
-                            <td><?php echo "average of salary=>" .$result['salary'];?></td>
+                        <td><?php echo $result['ID']?></td>
+                        <td><?php echo $result['name']?></td>
+                        <td><?php echo $result['age']?></td>                     
+                        <td><?php echo $result['city']?></td>
+                        <td><?php echo $result['email']?></td>
+                        <td><?php echo $result['salary'];?></td>
                             <td><button class="btn btn-secondary ">Edit</button></td>
                             <td>Delete</td>
                        </tr> 
