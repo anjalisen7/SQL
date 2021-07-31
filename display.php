@@ -25,7 +25,7 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT  * FROM employee e RIGHT JOIN sqlpractice s   ON s.ID = e.employee_id  ORDER BY age";
+                      $selectQuery= "SELECT  * FROM employee cross  JOIN sqlpractice where name='anjali'";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
