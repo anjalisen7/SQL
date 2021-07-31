@@ -25,8 +25,7 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT fname,age,email FROM users UNION 
-                      SELECT name,age,email FROM sqlpractice";
+                      $selectQuery= "SELECT * FROM sqlpractice  GROUP BY city";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
@@ -34,7 +33,7 @@
                         <tr>
                         <td><?php echo $result['ID']?></td>
                         <td><?php echo $result['employee_id']?></td>
-                        <td><?php echo $result['fname']?></td>
+                        <td><?php echo $result['name']?></td>
                         <td><?php echo $result['age']?></td>                     
                         <td><?php echo $result['city']?></td>
                         <td><?php echo $result['email']?></td>
