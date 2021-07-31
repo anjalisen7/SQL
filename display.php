@@ -25,7 +25,7 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT * FROM sqlpractice INNER JOIN employee ON sqlpractice.email = employee.email";
+                      $selectQuery= "SELECT * FROM sqlpractice INNER JOIN employee ON sqlpractice.email = employee.email where name LIKE 'a%'";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
