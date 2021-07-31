@@ -25,7 +25,7 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT * FROM sqlpractice  GROUP BY city";
+                      $selectQuery= "SELECT city ,COUNT(city) FROM sqlpractice  GROUP BY city";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
