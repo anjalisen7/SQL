@@ -25,8 +25,8 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT fname,age FROM users UNION ALL
-                      SELECT name,age FROM sqlpractice";
+                      $selectQuery= "SELECT fname,age,email FROM users UNION 
+                      SELECT name,age,email FROM sqlpractice";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
