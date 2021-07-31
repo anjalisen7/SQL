@@ -25,7 +25,8 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT  * FROM employee cross  JOIN sqlpractice where name='anjali'";
+                      $selectQuery= "SELECT fname,age FROM users UNION ALL
+                      SELECT name,age FROM sqlpractice";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
@@ -33,7 +34,7 @@
                         <tr>
                         <td><?php echo $result['ID']?></td>
                         <td><?php echo $result['employee_id']?></td>
-                        <td><?php echo $result['name']?></td>
+                        <td><?php echo $result['fname']?></td>
                         <td><?php echo $result['age']?></td>                     
                         <td><?php echo $result['city']?></td>
                         <td><?php echo $result['email']?></td>
