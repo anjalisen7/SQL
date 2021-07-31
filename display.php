@@ -25,7 +25,7 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT * ,COUNT(city) FROM sqlpractice inner join employee on sqlpractice.ID=employee.employee_id GROUP BY city";
+                      $selectQuery= "SELECT * ,COUNT(city) FROM sqlpractice inner join employee on sqlpractice.ID=employee.employee_id  where age= 34 GROUP BY city";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
