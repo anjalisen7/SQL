@@ -14,24 +14,28 @@
                             <th>City</th>
                             <th>Email</th>
                             <th>salary</th>
+                            <th>POST</th>
+                            <th>phone-no.</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT ID as customer_id, name as customer_name, age as customer_Age, city as customer_city FROM sqlpractice";
+                      $selectQuery= "SELECT * FROM sqlpractice INNER JOIN employee ON sqlpractice.ID=employee.employee_id";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
                      ?>
                         <tr>
-                        <td><?php echo $result['customer_id']?></td>
-                        <td><?php echo $result['customer_name']?></td>
-                        <td><?php echo $result['customer_Age']?></td>                     
-                        <td><?php echo $result['customer_city']?></td>
-                        <!-- <td><?php echo $result['email']?></td>
-                        <td><?php echo $result['salary'];?></td> -->
+                        <td><?php echo $result['ID']?></td>
+                        <td><?php echo $result['name']?></td>
+                        <td><?php echo $result['age']?></td>                     
+                        <td><?php echo $result['city']?></td>
+                        <td><?php echo $result['email']?></td>
+                        <td><?php echo $result['salary'];?></td>
+                        <td><?php echo $result['Post'];?></td>
+                        <td><?php echo $result['phone-no.'];?></td>
                             <td><button class="btn btn-secondary ">Edit</button></td>
                             <td>Delete</td>
                        </tr> 
