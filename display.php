@@ -25,7 +25,7 @@
 
                      <?php
                       require_once("connection.php");
-                      $selectQuery= "SELECT * FROM sqlpractice LEFT JOIN employee ON sqlpractice.ID = employee.id";
+                      $selectQuery= "SELECT  * FROM sqlpractice s  LEFT JOIN employee e  ON s.ID = e.employee_id";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
