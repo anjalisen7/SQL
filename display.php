@@ -10,15 +10,15 @@
                         <tr class="table table-success table-stripped">
                             <th>Id</th>
                             <th>Name</th> 
-                            <th>Age</th>
-                             <th>City</th>
+                            <th>percentage</th>
+                            <th>RESULT</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
 
                      <?php 
                       require_once("connection.php");
-                      $selectQuery= "SELECT * FROM student where City = ALL (select Cid from city where City = 'uttrakhand')";
+                      $selectQuery= 'SELECT Id, Name,percentage, IF(percentage>=35,"PASS","FAIL")AS RESULT FROM student'; 
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
@@ -26,8 +26,8 @@
                         <tr>
                         <td><?php echo $result['Id']?></td>
                         <td><?php echo $result['Name']?></td>
-                        <td><?php echo $result['Age']?></td>                     
-                        <td><?php echo $result['City']?></td>
+                        <td><?php echo $result['percentage']?></td>                     
+                        <td><?php echo $result['RESULT']?></td>
                      <td><button class="btn btn-secondary ">Edit</button></td>
                         <td><button class="btn btn-danger ">Delete</button></td>
                        </tr> 
