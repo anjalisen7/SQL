@@ -18,15 +18,13 @@
 
                      <?php 
                       require_once("connection.php");
-                      $selectQuery= 'SELECT Id, Name,percentage,
-                       CASE  
-                          when percentage >=80 and percentage <=100 then "Merit"
-                          when percentage >=60 and percentage <80 then "1st devision"
-                          when percentage >=45 and percentage <60 then "2nd devision"
-                          when percentage >=33 and percentage <45 then "3rd devision"
-                          when percentage <33 then "FAIL"
-                          else "not correct"
-                        END AS GRADE FROM student'; 
+                      $selectQuery= 'UPDATE student SET
+                       percentage =(CASE Id         
+                          when 1 then 90
+                          when 3 then 64
+                          when 4 then 18
+                        END)
+                          where Id IN(1,3,4)'; 
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
