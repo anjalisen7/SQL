@@ -25,6 +25,7 @@
                           when percentage >=45 and percentage <60 then "2nd devision"
                           when percentage >=33 and percentage <45 then "3rd devision"
                           when percentage <33 then "FAIL"
+                          else "not correct"
                         END AS GRADE FROM student'; 
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
