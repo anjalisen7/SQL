@@ -18,7 +18,7 @@
 
                      <?php 
                       require_once("connection.php");
-                      $selectQuery= "SELECT * FROM student where City IN(select Cid from city where City IN ('gwalior','uttrakhand'))";
+                      $selectQuery= "SELECT * FROM student where Exists (select Cid from city where City = 'gwalior')";
                       $query = mysqli_query($conn,$selectQuery);
                       while($result= mysqli_fetch_array($query)){
                                
